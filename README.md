@@ -22,10 +22,13 @@ visualization_3group.ipynb
 
 This script generates:
 1. PCA plot (using VST-transformed data from DESeq2)
-2. Volcano plots for all 3 pairwise comparisons (dot same size, no special meaning)
-3. Gene list comparison (Venn diagram / UpSet plot)
+2. Gene list comparison (Venn diagram / UpSet plot)
 
 Prerequisites: Run DESeq2_3group_analysis.R first to generate input files. All input for this script is output of DESeq2_3group_analysis.R.
+
+For the PCA plot, input:
+pca_file: Path to pca_data.csv from R script (DESeq2 plotPCA output)
+vst_file: Path to vst_counts.csv from R script (VST-transformed counts); Variance stabilizing transformation is DESeq2's standard normalization for visualization. It makes variance constant across expression levels, so all genes contribute equally to PCA. This is the correct method for RNA-seq PCA.
 
 volcano.ipynb loads DESeq2 results for all three comparisons and gene categories to create a volcano plot with:
     - Upregulated genes in red
@@ -38,3 +41,14 @@ This script performs:
 1. Male vs Female comparison within each group
 2. Male vs Female total
 3. All pairwise t-tests between groups and U Tests
+
+
+
+salmon.merged.gene_counts_angelatian.tsv
+This file contains raw data for DESeq2_3group_analysis.R
+With the label is a little different than the manuscript; following is how each matches:
+A_inoA = Colonized adult (CA)
+A_inoR = Colonized newly eclosed (CNE)
+B_conR = Axenic newly eclosed (ANE)
+B1_reintro = Colonized Axenic adult (CAA)
+B2_conA = Axenic adult (AA)
