@@ -45,7 +45,7 @@ This script performs:
 
 
 salmon.merged.gene_counts_angelatian.tsv
-This file contains raw data for DESeq2_3group_analysis.R
+This file contains processed data for DESeq2_3group_analysis.R
 With the label is a little different than the manuscript; following is how each matches:
 A_inoA = Colonized adult (CA)
 A_inoR = Colonized newly eclosed (CNE)
